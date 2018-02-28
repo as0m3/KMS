@@ -9,9 +9,9 @@ public class Assets {
 	public static BufferedImage player; // list, all, of, them, out
 		
 	public static void init() {
-		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/PirateShipSprite.png"));
+		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
 		
-		player = sheet.crop(0, 0, 64, 64);
+		player = sheet.crop(0, 0, width, height);
 		
 	}
 }
