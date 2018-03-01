@@ -11,6 +11,6 @@ public class SpriteSheet {
 	}
 	
 	public BufferedImage crop(int x, int y, int width, int height) {
-		return sheet.getSubimage(x, y, width, height);
+		return sheet.getSubimage((x*32)-32, (y*32)-32, width, height);
 	}
 }
