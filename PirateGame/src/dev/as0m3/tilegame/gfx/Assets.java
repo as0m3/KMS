@@ -19,7 +19,6 @@ public class Assets {
 		sand = tilesheet.crop(2, 2, width, height);
 		dirt = tilesheet.crop(2, 1, width, height);
 		
-		
 		// Player
 		player_up = new BufferedImage[2];
 		player_down = new BufferedImage[2];
