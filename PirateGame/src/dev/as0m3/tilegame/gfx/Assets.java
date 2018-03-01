@@ -18,8 +18,8 @@ public class Assets {
 		player_right = new BufferedImage[3];
 		player_idle = new BufferedImage[2];
 		
-		player_up[0] = sheet.crop(2, 4, width, height); 
-		player_up[1] = sheet.crop(3, 4, width, height);                             
+		player_up[0] = sheet.crop(1, 4, width, height); 
+		player_up[1] = sheet.crop(3, 3, width, height);                             
 		
 		player_down[0] = sheet.crop(1, 1, width, height);
 		player_down[1] = sheet.crop(2, 1, width, height);
@@ -32,8 +32,8 @@ public class Assets {
 		player_right[1] = sheet.crop(1, 2, width, height);
 		player_right[2] = sheet.crop(2, 2, width, height);
 		
-		player_idle[0] = sheet.crop(1, 4, width, height);
-		player_idle[1] = sheet.crop(3, 3, width, height);
+		player_idle[0] = sheet.crop(2, 4, width, height);
+		player_idle[1] = sheet.crop(3, 4, width, height);
 		
 	}
 }
