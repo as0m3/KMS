@@ -2,7 +2,6 @@ package dev.as0m3.tilegame.entites.creatures;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.concurrent.TimeUnit;
 
 import dev.as0m3.tilegame.Game;
 import dev.as0m3.tilegame.gfx.Animation;
