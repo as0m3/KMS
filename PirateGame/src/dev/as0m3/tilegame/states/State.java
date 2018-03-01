@@ -2,7 +2,7 @@ package dev.as0m3.tilegame.states;
 
 import java.awt.Graphics;
 
-import dev.as0m3.tilegame.Game;
+import dev.as0m3.tilegame.Handler;
 
 public abstract class State {
 	
@@ -17,10 +17,10 @@ public abstract class State {
 	}
 	
 	//CLASS
-	protected Game game;
+	protected Handler handler;
 	
-	public State(Game game) {
-		this.game = game;
+	public State(Handler handler) {
+		this.handler = handler;
 	}
 	
 	public abstract void tick();

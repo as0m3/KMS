@@ -6,13 +6,18 @@ public class Assets {
 	
 	private static final int width = 32, height = 32;
 	
-	public static BufferedImage something; // list, all, of, them, out
+	public static BufferedImage voidtile, grass, sand, rock, dirt; // list, all, of, them, out
 	public static BufferedImage[] player_up, player_down, player_left, player_right, player_idle;
 		
 	public static void init() {
 		SpriteSheet spritesheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
 		//SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
 		
+		//Tiles
+		
+		
+		
+		// Player
 		player_up = new BufferedImage[2];
 		player_down = new BufferedImage[2];
 		player_left = new BufferedImage[3];

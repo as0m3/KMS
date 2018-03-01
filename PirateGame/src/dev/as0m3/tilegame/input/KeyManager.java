@@ -3,6 +3,8 @@ package dev.as0m3.tilegame.input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import dev.as0m3.tilegame.Game;
+
 public class KeyManager implements KeyListener {
 	//episode 14
 	private boolean[] keys;
@@ -33,6 +35,5 @@ public class KeyManager implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		
 	}
-	
 	
 }

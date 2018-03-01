@@ -1,5 +1,6 @@
 package dev.as0m3.tilegame.entites.creatures;
 
+import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.entites.Entity;
 
 public abstract class Creature extends Entity {
@@ -14,8 +15,8 @@ public abstract class Creature extends Entity {
 	protected float speed;
 	protected float xMove, yMove;
 
-	public Creature(String name, float x, float y, int width, int height) {
-		super(name, x, y, width, height);
+	public Creature(Handler handler, String name, float x, float y, int width, int height) {
+		super(handler, name, x, y, width, height);
 		health = DEFAULT_HEALTH;
 		speed = DEFAULT_SPEED;
 		xMove = 0;

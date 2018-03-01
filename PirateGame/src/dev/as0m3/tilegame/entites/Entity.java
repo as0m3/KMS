@@ -2,13 +2,17 @@ package dev.as0m3.tilegame.entites;
 
 import java.awt.Graphics;
 
+import dev.as0m3.tilegame.Handler;
+
 public abstract class Entity {
 	
+	protected Handler handler;
 	protected float x, y;
 	protected int width, height;
 	protected String name;
 	
-	public Entity(String name, float x, float y, int width, int height) {
+	public Entity(Handler handler, String name, float x, float y, int width, int height) {
+		this.handler = handler;
 		this.name = name;
 		this.x = x;
 		this.y = y;
