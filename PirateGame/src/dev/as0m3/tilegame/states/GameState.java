@@ -13,10 +13,9 @@ public class GameState extends State {
 	
 	public GameState(Handler handler) {
 		super(handler);
-		world = new World(handler, "res/worlds/world1.lvl");
+		world = new World(handler, "res/worlds/world1.txt");
 		handler.setWorld(world);
 		player = new Player(handler, "Player", 1080/2-32, 810/2-32);
-		
 	}
 	
 	@Override
