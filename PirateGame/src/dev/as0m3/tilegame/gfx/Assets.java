@@ -11,10 +11,13 @@ public class Assets {
 		
 	public static void init() {
 		SpriteSheet spritesheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
-		//SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
+		SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
 		
 		//Tiles
-		
+		voidtile = tilesheet.crop(1, 2, width, height);
+		grass = tilesheet.crop(1, 1, width, height);
+		sand = tilesheet.crop(2, 2, width, height);
+		dirt = tilesheet.crop(2, 1, width, height);
 		
 		
 		// Player
