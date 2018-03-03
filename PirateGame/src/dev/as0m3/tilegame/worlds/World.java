@@ -3,6 +3,8 @@ package dev.as0m3.tilegame.worlds;
 import java.awt.Graphics;
 
 import dev.as0m3.tilegame.Handler;
+import dev.as0m3.tilegame.entites.EntityManager;
+import dev.as0m3.tilegame.entites.creatures.Player;
 import dev.as0m3.tilegame.tiles.Tile;
 import dev.as0m3.tilegame.utils.Utils;
 
@@ -13,13 +15,20 @@ public class World {
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
+	//Entities
+	private EntityManager entityManager;
+	
 	public World(Handler handler, String path) {
-		this.handler = handler;
 		loadWorld(path);
+		
+		this.handler = handler;
+		entityManager = new EntityManager(handler, new Player(handler, "Player", spawnX, spawnY));
+		
+		
 	}
 	
 	public void tick() {
-		
+		entityManager.tick();
 	}
 	
 	public void render(Graphics g) {
@@ -34,6 +43,8 @@ public class World {
 						(int) (y * Tile.TILE_HEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
+		//Entities
+		entityManager.render(g);
 	}
 	
 	public Tile getTile(int x, int y) {

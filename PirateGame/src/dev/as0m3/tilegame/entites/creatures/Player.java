@@ -20,7 +20,7 @@ public class Player extends Creature {
 		bounds.x = 7*2; // x coordinate of hitbox starting point
 		bounds.y = 0*2; // y coordinate of hitbox starting point
 		bounds.width = 17*2; // width of hitbox
-		bounds.height = 32*2-1; // height of hitbow
+		bounds.height = 32*2-1; // height of hitbox
 		
 		
 		// Animations
