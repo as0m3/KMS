@@ -2,6 +2,7 @@ package dev.as0m3.tilegame.gfx;
 
 import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.entites.Entity;
+import dev.as0m3.tilegame.tiles.Tile;
 
 public class GameCamera {
 	
@@ -17,10 +18,14 @@ public class GameCamera {
 	public void checkBlankSpace() {
 		if(xOffset < 0) {
 			xOffset = 0;
+		} else if(xOffset > handler.getWorld().getWidth() * Tile.TILE_WIDTH - handler.getWidth()) {
+			xOffset = handler.getWorld().getWidth() * Tile.TILE_WIDTH - handler.getWidth();
 		}
 		
 		if(yOffset < 0) {
 			yOffset = 0;
+		} else if(yOffset > handler.getWorld().getHeight() * Tile.TILE_HEIGHT - handler.getHeight()) {
+			yOffset = handler.getWorld().getHeight() * Tile.TILE_HEIGHT - handler.getHeight();
 		}
 	}
 	

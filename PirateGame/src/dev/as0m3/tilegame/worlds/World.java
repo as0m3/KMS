@@ -54,7 +54,7 @@ public class World {
 		width = Utils.parseInt(tokens[0]);
 		height = Utils.parseInt(tokens[1]);
 		spawnX = Utils.parseInt(tokens[2])*64;
-		spawnY = Utils.parseInt(tokens[3])*64;
+		spawnY = Utils.parseInt(tokens[3])*64-24;
 		
 		tiles = new int[width][height];
 		for(int y = 0; y < height; y++){
