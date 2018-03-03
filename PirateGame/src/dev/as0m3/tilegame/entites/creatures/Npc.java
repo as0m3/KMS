@@ -14,8 +14,8 @@ public class Npc extends Creature {
 	public Npc(Handler handler, String name, float x, float y, int width, int height) {
 		super(handler, name, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		
-		animIdle_left = new Animation(400, Assets.npc_idle_left);
-		animIdle_right = new Animation(400, Assets.npc_idle_right);
+		animIdle_left = new Animation(1000, Assets.npc_idle_left);
+		animIdle_right = new Animation(1000, Assets.npc_idle_right);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class Npc extends Creature {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(pickAnimation(), (int) x, (int) y, width, height, null);
+		g.drawImage(pickAnimation(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 	}
 	
 	

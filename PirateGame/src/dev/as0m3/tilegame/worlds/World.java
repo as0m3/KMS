@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.entites.EntityManager;
+import dev.as0m3.tilegame.entites.creatures.Npc;
 import dev.as0m3.tilegame.entites.creatures.Player;
 import dev.as0m3.tilegame.tiles.Tile;
 import dev.as0m3.tilegame.utils.Utils;
@@ -23,6 +24,7 @@ public class World {
 		
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, "Player", spawnX, spawnY));
+		entityManager.addEntity(new Npc(handler, "CaptainVane", spawnX + 64, spawnY - 32, width, height));
 		
 		
 	}
