@@ -7,6 +7,8 @@ public class Animation {
 	private int speed, index;
 	private long lastTime, timer;
 	private BufferedImage[] frames;
+	// test
+	private boolean done = false;
 	
 	public Animation(int speed, BufferedImage[] frames) {
 		this.speed = speed;
@@ -24,6 +26,7 @@ public class Animation {
 			timer = 0;
 			if(index >= frames.length) {
 				index = 0;
+				done = true;
 			}
 				
 		}
@@ -33,5 +36,12 @@ public class Animation {
 		return frames[index];
 	}
 
+	public boolean isDone() {
+		return done;
+	}
+
+	public void setDone(boolean done) {
+		this.done = done;
+	}
 	
 }
