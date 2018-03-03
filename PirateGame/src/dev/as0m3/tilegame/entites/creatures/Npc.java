@@ -10,14 +10,22 @@ import dev.as0m3.tilegame.gfx.Assets;
 public class Npc extends Creature {
 	
 	private Animation animIdle_left, animIdle_right;
-	int rnd = 1; 
+	private Animation[] animations;
+	
+	int rnd;
+	int count = 0;
+	int temp = 1;
 
 	public Npc(Handler handler, String name, float x, float y, int width, int height) {
 		super(handler, name, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		
 		// Animations
-		animIdle_left = new Animation(600, Assets.npc_idle_left);
-		animIdle_right = new Animation(600, Assets.npc_idle_right);
+		animIdle_left = new Animation(250, Assets.npc_idle_left);
+		animIdle_right = new Animation(250, Assets.npc_idle_right);
+		animations = new Animation[2]; 
+		
+		animations[0] = animIdle_left; 
+		animations[1] = animIdle_right;
 	}
 
 	@Override
@@ -35,47 +43,41 @@ public class Npc extends Creature {
 	
 	public BufferedImage pickAnimation() {
 		
+		rnd = (Math.random() <= 0.5) ? 1 : 2;
 		
-		
-		if(!animIdle_left.isDone()) {
+//		if (count > 2) {
+//			
+//			switch(temp-1) {
+//			case 0:
+//				animations[0].setDone(false);
+//				temp = 2;
+//				count = 0;
+//				return animations[1].getCurrentFrame();
+//			case 1:
+//				animations[1].setDone(false);
+//				temp = 1;
+//				count = 0;
+//				return animations[0].getCurrentFrame();
+//			default:
+//				count = 0;
+//				return animations[0].getCurrentFrame();
+//			}
+//			
+//			
+//		} else {
 			
-			return animIdle_left.getCurrentFrame();
-		} else if(!animIdle_right.isDone()) {
-			
-			return animIdle_right.getCurrentFrame();
-		} else if(animIdle_left.isDone()) {
-			
-			rnd = (Math.random() <= 0.5) ? 1 : 2;
-			
-			if(rnd == 1) {
-				animIdle_left.setDone(false);
-				System.out.println("left 1: " + rnd);
-				return animIdle_left.getCurrentFrame();
+			if (animations[temp - 1].isDone()) {
+				animations[temp - 1].setDone(false);
+				temp = rnd;
+				count++;
+				return animations[temp - 1].getCurrentFrame();
 			} else {
-				animIdle_left.setDone(false);
-				System.out.println("left 2: " + rnd);
-				return animIdle_right.getCurrentFrame();
-			}
+				return animations[temp - 1].getCurrentFrame();
+			} 
 			
-		} else if(animIdle_right.isDone()) {
-			
-			rnd = (Math.random() <= 0.5) ? 1 : 2;
-			
-			if(rnd == 1) {
-				animIdle_right.setDone(false);
-				System.out.println("right 1: " + rnd);
-				return animIdle_left.getCurrentFrame();
-			} else {
-				animIdle_right.setDone(false);
-				System.out.println("right 2: " + rnd);
-				return animIdle_right.getCurrentFrame();
-			}
-			
-		} else {
-			return animIdle_right.getCurrentFrame();
-		}
-		
-	
+	//	}
+					
+
 	}
 
 }

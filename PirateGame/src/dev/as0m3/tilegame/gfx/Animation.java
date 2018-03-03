@@ -26,7 +26,7 @@ public class Animation {
 			timer = 0;
 			if(index >= frames.length) {
 				index = 0;
-				done = true;
+				setDone(true);
 			}
 				
 		}
