@@ -2,6 +2,7 @@ package dev.as0m3.tilegame.entites.creatures;
 
 import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.entites.Entity;
+import dev.as0m3.tilegame.tiles.Tile;
 
 public abstract class Creature extends Entity {
 	
@@ -24,8 +25,55 @@ public abstract class Creature extends Entity {
 	}
 
 	public void move() {
-		x += xMove;
-		y += yMove;
+		moveX();
+		moveY();
+	}
+	
+	public void moveX() {
+		if(xMove > 0) { // Moving Right
+			
+			int tx = (int) (x + xMove + bounds.x + bounds.getWidth()) / Tile.TILE_WIDTH;
+			
+			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) && 
+					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
+				x += xMove;
+			}
+			
+		} else if(xMove < 0) { // Moving Left
+			
+			int tx = (int) (x + xMove + bounds.x) / Tile.TILE_WIDTH;
+			
+			if(!collisionWithTile(tx, (int) (y + bounds.y) / Tile.TILE_HEIGHT) && 
+					!collisionWithTile(tx, (int) (y + bounds.y + bounds.height) / Tile.TILE_HEIGHT)) {
+				x += xMove;
+			}
+		}
+	}
+	
+	public void moveY() { // Moving Up
+		if(yMove < 0) {
+			
+			int ty = (int) (y + yMove + bounds.y) / Tile.TILE_HEIGHT;
+			
+			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH , ty) && 
+					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
+				y += yMove;
+			}
+			
+		} else if(yMove > 0) { // Moving Down
+			
+			int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILE_HEIGHT;
+			
+			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILE_WIDTH , ty) && 
+					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILE_WIDTH, ty)) {
+				y += yMove;
+			}
+			
+		}
+	}
+	
+	protected boolean collisionWithTile(int x, int y) {
+		return handler.getWorld().getTile(x, y).isSolid();
 	}
 	
 	// GETTERS SETTERS
