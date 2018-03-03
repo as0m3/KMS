@@ -21,7 +21,7 @@ public class Player extends Creature {
 		bounds.x = 7*2; // x coordinate of hitbox starting point
 		bounds.y = 0*2; // y coordinate of hitbox starting point
 		bounds.width = 17*2; // width of hitbox
-		bounds.height = 32*2; // height of hitbow
+		bounds.height = 32*2-1; // height of hitbow
 		
 		
 		// Animations
@@ -72,8 +72,8 @@ public class Player extends Creature {
 	@Override
 	public void render(Graphics g) {
 		// Draw HitBox To Screen
-		//g.setColor(Color.red);
-		//g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+		g.setColor(Color.red);
+		g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		
