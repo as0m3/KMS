@@ -13,15 +13,22 @@ public class Npc extends Creature {
 	private Animation[] animations;
 	
 	int rnd;
-	int count = 0;
+	int count = 1;
 	int temp = 1;
 
 	public Npc(Handler handler, String name, float x, float y, int width, int height) {
 		super(handler, name, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		
+		// Collision HitBox
+		bounds.x = 11*2; // x coordinate of hitbox starting point
+		bounds.y = 19*2; // y coordinate of hitbox starting point
+		bounds.width = 8*2; // width of hitbox
+		bounds.height = 7*2; // height of hitbox
+		
+		
 		// Animations
-		animIdle_left = new Animation(250, Assets.npc_idle_left);
-		animIdle_right = new Animation(250, Assets.npc_idle_right);
+		animIdle_left = new Animation(500, Assets.npc_idle_left);
+		animIdle_right = new Animation(500, Assets.npc_idle_right);
 		animations = new Animation[2]; 
 		
 		animations[0] = animIdle_left; 
@@ -46,20 +53,18 @@ public class Npc extends Creature {
 		rnd = (Math.random() <= 0.5) ? 1 : 2;
 		
 //		if (count > 2) {
-//			
+//			count = 1;
 //			switch(temp-1) {
+//		    	
 //			case 0:
 //				animations[0].setDone(false);
 //				temp = 2;
-//				count = 0;
 //				return animations[1].getCurrentFrame();
 //			case 1:
 //				animations[1].setDone(false);
 //				temp = 1;
-//				count = 0;
 //				return animations[0].getCurrentFrame();
 //			default:
-//				count = 0;
 //				return animations[0].getCurrentFrame();
 //			}
 //			
@@ -69,13 +74,14 @@ public class Npc extends Creature {
 			if (animations[temp - 1].isDone()) {
 				animations[temp - 1].setDone(false);
 				temp = rnd;
-				count++;
+//				count++;
+//				System.out.println(count);
 				return animations[temp - 1].getCurrentFrame();
 			} else {
 				return animations[temp - 1].getCurrentFrame();
 			} 
 			
-	//	}
+//		}
 					
 
 	}

@@ -69,5 +69,6 @@ public class Assets {
 		npc_idle_right[3] = spritesheet.crop(1, 6, width, height);
 		npc_idle_right[4] = spritesheet.crop(1, 5, width, height);
 		
+		
 	}
 }

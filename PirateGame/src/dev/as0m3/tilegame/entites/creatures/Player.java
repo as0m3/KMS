@@ -17,10 +17,16 @@ public class Player extends Creature {
 	public Player(Handler game, String name, float x, float y) {
 		super(game, name, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		
+		// DAMAGE HITBOX
+//		bounds.x = 7*2; // x coordinate of hitbox starting point
+//		bounds.y = 0*2; // y coordinate of hitbox starting point
+//		bounds.width = 17*2; // width of hitbox
+//		bounds.height = 32*2-1; // height of hitbox
+		
 		bounds.x = 7*2; // x coordinate of hitbox starting point
-		bounds.y = 0*2; // y coordinate of hitbox starting point
+		bounds.y = 17*2; // y coordinate of hitbox starting point
 		bounds.width = 17*2; // width of hitbox
-		bounds.height = 32*2-1; // height of hitbox
+		bounds.height = 17*2-1; // height of hitbox
 		
 		
 		// Animations
@@ -71,8 +77,8 @@ public class Player extends Creature {
 	@Override
 	public void render(Graphics g) {
 		// Draw HitBox To Screen
-		//g.setColor(Color.red);
-		//g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+//		g.setColor(Color.red);
+//		g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		

@@ -25,10 +25,15 @@ public class World {
 		this.handler = handler;
 		entityManager = new EntityManager(handler, new Player(handler, "Player", spawnX, spawnY));
 		entityManager.addEntity(new Npc(handler, "CaptainVane", spawnX + 64, spawnY - 32, width, height));
+		entityManager.addEntity(new Npc(handler, "CaptainBane", spawnX + 128, spawnY - 32, width, height));
 		
 		
 	}
 	
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
 	public void tick() {
 		entityManager.tick();
 	}
