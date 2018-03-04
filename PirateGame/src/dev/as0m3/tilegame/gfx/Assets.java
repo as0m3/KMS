@@ -1,15 +1,22 @@
 package dev.as0m3.tilegame.gfx;
 
+import java.awt.Font;
 import java.awt.image.BufferedImage;
 
 public class Assets {
 	
 	private static final int width = 32, height = 32;
 	
+	// Font
+	public static Font font8, font12 , font24;
+//	public static HashMap<Character, BufferedImage> font; 
+	
 	//TILES
-	public static BufferedImage voidtile, grass, sand, rock, dirt; // list, all, of, them, out
+	public static BufferedImage voidtile, grass, sand, rock, dirt;// list, all, of, them, out
+	
 	//Entities
-	public static BufferedImage tree;
+//	public static BufferedImage tree;
+	
 	//Animations
 	public static BufferedImage[] player_up, player_down, player_left, player_right, player_idle;
 	public static BufferedImage[] npc_idle_left, npc_idle_right;
@@ -21,6 +28,12 @@ public class Assets {
 		
 		//Entities
 		// ------> tree = entitysheet.crop(1, 1, width, height);
+		
+		// Font
+		font8 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 8);
+		font12 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 12);
+		font24 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 24);
+		
 		
 		//Tiles
 		voidtile = tilesheet.crop(1, 2, width, height);

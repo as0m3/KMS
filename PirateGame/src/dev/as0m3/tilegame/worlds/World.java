@@ -23,9 +23,9 @@ public class World {
 		loadWorld(path);
 		
 		this.handler = handler;
-		entityManager = new EntityManager(handler, new Player(handler, "Player", spawnX, spawnY));
-		entityManager.addEntity(new Npc(handler, "CaptainVane", spawnX + 64, spawnY - 32, width, height));
-		entityManager.addEntity(new Npc(handler, "CaptainBane", spawnX + 128, spawnY - 32, width, height));
+		entityManager = new EntityManager(handler, new Player(handler, "Username", spawnX, spawnY));
+		entityManager.addEntity(new Npc(handler, "Cpt. Vane", spawnX + 64, spawnY - 32, width, height));
+		entityManager.addEntity(new Npc(handler, "Cpt. Bane", spawnX + 140, spawnY - 32, width, height));
 		
 		
 	}

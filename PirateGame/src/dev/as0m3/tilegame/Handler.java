@@ -2,6 +2,7 @@ package dev.as0m3.tilegame;
 
 import dev.as0m3.tilegame.gfx.GameCamera;
 import dev.as0m3.tilegame.input.KeyManager;
+import dev.as0m3.tilegame.input.MouseManager;
 import dev.as0m3.tilegame.worlds.World;
 
 public class Handler {
@@ -19,6 +20,10 @@ public class Handler {
 	
 	public KeyManager getKeyManager() {
 		return game.getKeyManager();
+	}
+	
+	public MouseManager getMouseManager() {
+		return game.getMouseManager();
 	}
 	
 	public int getWidth() {

@@ -74,8 +74,4 @@ public class EntityManager {
 		this.entities = entities;
 	}
 	
-	
-	
-	
-	
 }

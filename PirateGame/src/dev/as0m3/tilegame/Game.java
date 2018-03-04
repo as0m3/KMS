@@ -7,6 +7,7 @@ import dev.as0m3.tilegame.display.Display;
 import dev.as0m3.tilegame.gfx.Assets;
 import dev.as0m3.tilegame.gfx.GameCamera;
 import dev.as0m3.tilegame.input.KeyManager;
+import dev.as0m3.tilegame.input.MouseManager;
 import dev.as0m3.tilegame.states.GameState;
 import dev.as0m3.tilegame.states.MenuState;
 import dev.as0m3.tilegame.states.State;
@@ -24,11 +25,12 @@ public class Game implements Runnable {
 	private Graphics g;
 	
 	//States
-	private State gameState;
-	private State menuState;
+	public State gameState;
+	public State menuState;
 	
 	//Input
 	private KeyManager keyManager;
+	private MouseManager mouseManager;	
 	
 	//Camera
 	private GameCamera gameCamera;
@@ -41,11 +43,16 @@ public class Game implements Runnable {
 		this.height = height;
 		this.title = title;
 		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
 	}
 	
 	private void init() {
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
+		display.getFrame().addMouseListener(mouseManager);
+		display.getFrame().addMouseMotionListener(mouseManager);
+		display.getCanvas().addMouseListener(mouseManager);
+		display.getCanvas().addMouseMotionListener(mouseManager);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -123,6 +130,10 @@ public class Game implements Runnable {
 	
 	public KeyManager getKeyManager() {
 		return keyManager;
+	}
+	
+	public MouseManager getMouseManager() {
+		return mouseManager;
 	}
 	
 	public GameCamera getGameCamera() {

@@ -1,11 +1,14 @@
 package dev.as0m3.tilegame.entites.creatures;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.text.Format;
 
 import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.gfx.Animation;
 import dev.as0m3.tilegame.gfx.Assets;
+import dev.as0m3.tilegame.gfx.Text;
 
 public class Player extends Creature {
 	
@@ -81,7 +84,7 @@ public class Player extends Creature {
 //		g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
 		
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
-		
+		Text.drawString(g, name, (int) (x - handler.getGameCamera().getxOffset() + 32), (int) (y - handler.getGameCamera().getyOffset() - 10), true, new Color(200, 200, 200), Assets.font12);
 	}
 	
 	

@@ -1,11 +1,13 @@
 package dev.as0m3.tilegame.entites.creatures;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import dev.as0m3.tilegame.Handler;
 import dev.as0m3.tilegame.gfx.Animation;
 import dev.as0m3.tilegame.gfx.Assets;
+import dev.as0m3.tilegame.gfx.Text;
 
 public class Npc extends Creature {
 	
@@ -45,6 +47,7 @@ public class Npc extends Creature {
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(pickAnimation(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+		Text.drawString(g, name, (int) (x - handler.getGameCamera().getxOffset() + 32), (int) (y - handler.getGameCamera().getyOffset() - 10), true, new Color(200, 200, 200), Assets.font12);
 	}
 	
 	
