@@ -7,8 +7,11 @@ public class Assets {
 	
 	private static final int width = 32, height = 32;
 	
+	// Menu Buttons
+	public static BufferedImage[] btn_start;
+	public static BufferedImage[] btn_stop;
 	// Font
-	public static Font font8, font12 , font24;
+	public static Font font8, font12 , font24, titleFont;
 //	public static HashMap<Character, BufferedImage> font; 
 	
 	//TILES
@@ -24,15 +27,28 @@ public class Assets {
 	public static void init() {
 		SpriteSheet spritesheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
 		SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
+		SpriteSheet startButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Start_Button.png"));
+		SpriteSheet stopButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Quit_Button.png"));
 		// ------> SpriteSheet entitysheet = new SpriteSheet(ImageLoader.loadImage("/textures/EntitySheet.png"));
 		
 		//Entities
 		// ------> tree = entitysheet.crop(1, 1, width, height);
 		
+		// Buttons
+		btn_start = new BufferedImage[2];
+		btn_stop = new BufferedImage[2];
+				
+		btn_start[0] = startButtonSheet.crop2(0, 0, 162, 64);
+		btn_start[1] = startButtonSheet.crop2(162, 0, 162, 64);
+		
+		btn_stop[0] = stopButtonSheet.crop2(0, 0, 64, 64);
+		btn_stop[1] = stopButtonSheet.crop2(64, 0, 64, 64);
+		
 		// Font
 		font8 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 8);
 		font12 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 12);
 		font24 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 24);
+		titleFont = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 96);
 		
 		
 		//Tiles

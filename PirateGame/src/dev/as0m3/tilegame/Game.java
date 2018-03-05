@@ -16,6 +16,7 @@ public class Game implements Runnable {
 	
 	private Display display;
 	private int width, height;
+	private boolean mute = false;
 	public String title;
 	
 	private boolean running = false;
@@ -60,7 +61,7 @@ public class Game implements Runnable {
 		
 		gameState = new GameState(handler);
 		menuState = new MenuState(handler);
-		State.setState(gameState);
+		State.setState(menuState);
 	}
 	
 	private void tick() {
@@ -126,6 +127,22 @@ public class Game implements Runnable {
 		
 		stop();
 	
+	}
+	
+	
+	public boolean isMuted() {
+		return mute;
+	}
+	
+	public void toggleMute() {
+		if(mute == true)
+			mute = false;
+		else
+			mute = true;
+	}
+	
+	public void setMute(boolean mute) {
+		this.mute = mute;
 	}
 	
 	public KeyManager getKeyManager() {
