@@ -15,13 +15,14 @@ public class MenuState extends State {
 	
 	private UIManager uiManager;
 	
-	private Animation character;
+	private Animation character, background;
 	
 	public MenuState(Handler handler) {
 		super(handler);
 		uiManager = new UIManager(handler);
 		handler.getMouseManager().setUIManager(uiManager);
 		character = new Animation(600, Assets.player_idle);
+		background = new Animation(300, Assets.background);
 		
 		// ----- Buttons -----
 		// Start
@@ -56,14 +57,16 @@ public class MenuState extends State {
 	public void tick() {
 		uiManager.tick();
 		character.tick();
+		background.tick();
 	}
 
 	@Override
 	public void render(Graphics g) {
+		g.drawImage(background.getCurrentFrame(), 0, 0, 1080, 810, null);
 		uiManager.render(g);
 		g.drawImage(character.getCurrentFrame(), (1080/2)-(256/2), 200, 256, 256, null);
 		//title
-		Text.drawString(g, "Pirate Game", (1080/2), 100, true, Color.black, Assets.titleFont);
+		Text.drawString(g, "Broadside!", (1080/2), 100, true, Color.white, Assets.titleFont);
 	}
 	
 	

@@ -10,6 +10,10 @@ public class Assets {
 	// Menu Buttons
 	public static BufferedImage[] btn_start;
 	public static BufferedImage[] btn_stop;
+	
+	//Menu Background
+	public static BufferedImage[] background;
+	
 	// Font
 	public static Font font8, font12 , font24, titleFont;
 //	public static HashMap<Character, BufferedImage> font; 
@@ -29,6 +33,7 @@ public class Assets {
 		SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
 		SpriteSheet startButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Start_Button.png"));
 		SpriteSheet stopButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Quit_Button.png"));
+		SpriteSheet backgroundSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
 		// ------> SpriteSheet entitysheet = new SpriteSheet(ImageLoader.loadImage("/textures/EntitySheet.png"));
 		
 		//Entities
@@ -43,6 +48,17 @@ public class Assets {
 		
 		btn_stop[0] = stopButtonSheet.crop2(0, 0, 64, 64);
 		btn_stop[1] = stopButtonSheet.crop2(64, 0, 64, 64);
+		
+		//Background
+		background = new BufferedImage[7];
+		
+		background[0] = backgroundSheet.crop2(0, 0, 1080, 810);
+		background[1] = backgroundSheet.crop2(1080, 0, 1080, 810);
+		background[2] = backgroundSheet.crop2(1080 * 2, 0, 1080, 810);
+		background[3] = backgroundSheet.crop2(0, 810, 1080, 810);
+		background[4] = backgroundSheet.crop2(1080, 810, 1080, 810);
+		background[5] = backgroundSheet.crop2(1080 * 2, 810, 1080, 810);
+		background[6] = backgroundSheet.crop2(0, 810 * 2, 1080, 810);
 		
 		// Font
 		font8 = FontLoader.loadFont("res/fonts/Minecraftia.ttf", 8);
