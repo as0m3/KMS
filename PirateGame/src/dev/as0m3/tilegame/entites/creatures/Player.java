@@ -13,7 +13,7 @@ import dev.as0m3.tilegame.gfx.Text;
 public class Player extends Creature {
 	
 	// Animations
-	private Animation animUp, animDown, animLeft, animRight, animIdle;
+	private Animation animUp, animDown, animLeft, animRight, animIdle /*,health*/;
 
 	//episode 13
 	
@@ -38,6 +38,7 @@ public class Player extends Creature {
 		animLeft = new Animation(400, Assets.player_left);
 		animRight = new Animation(400, Assets.player_right);
 		animIdle = new Animation(600, Assets.player_idle);
+		//health = new Animation(600, Assets.hp_bar);
 	}
 
 	@Override
@@ -52,6 +53,7 @@ public class Player extends Creature {
 		animLeft.tick();
 		animRight.tick();
 		animIdle.tick();
+		//health.tick();
 	}
 	
 	private void getInput() { 
@@ -82,6 +84,8 @@ public class Player extends Creature {
 		// Draw HitBox To Screen
 //		g.setColor(Color.red);
 //		g.fillRect((int) ((x + (bounds.x) - handler.getGameCamera().getxOffset())), (int) (y + (bounds.y) - handler.getGameCamera().getyOffset()), bounds.width, bounds.height);
+		
+		//g.drawImage(health.getCurrentFrame(), 10, 700, 32, 9, null);
 		
 		g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 		Text.drawString(g, name, (int) (x - handler.getGameCamera().getxOffset() + 32), (int) (y - handler.getGameCamera().getyOffset() - 10), true, new Color(200, 200, 200), Assets.font12);

@@ -27,6 +27,9 @@ public class Assets {
 	//Animations
 	public static BufferedImage[] player_up, player_down, player_left, player_right, player_idle;
 	public static BufferedImage[] npc_idle_left, npc_idle_right;
+	
+	//Hp Bar
+	public static BufferedImage[] hp_bar;
 		
 	public static void init() {
 		SpriteSheet spritesheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpriteSheet.png"));
@@ -34,6 +37,7 @@ public class Assets {
 		SpriteSheet startButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Start_Button.png"));
 		SpriteSheet stopButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Quit_Button.png"));
 		SpriteSheet backgroundSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
+		SpriteSheet healthbarSheet = new SpriteSheet(ImageLoader.loadImage("/textures/HP_Bar.png"));
 		// ------> SpriteSheet entitysheet = new SpriteSheet(ImageLoader.loadImage("/textures/EntitySheet.png"));
 		
 		//Entities
@@ -114,6 +118,18 @@ public class Assets {
 		npc_idle_right[3] = spritesheet.crop(1, 6, width, height);
 		npc_idle_right[4] = spritesheet.crop(1, 5, width, height);
 		
+		// healthbar
+		hp_bar = new BufferedImage[10];
 		
+		hp_bar[0] = healthbarSheet.crop2(0, 0, 32, 9);
+		hp_bar[1] = healthbarSheet.crop2(32, 0, 32, 9);
+		hp_bar[2] = healthbarSheet.crop2(32*2, 0, 32, 9);
+		hp_bar[3] = healthbarSheet.crop2(0, 9, 32, 9);
+		hp_bar[4] = healthbarSheet.crop2(32, 9, 32, 9);
+		hp_bar[5] = healthbarSheet.crop2(32*2, 9, 32, 9);
+		hp_bar[6] = healthbarSheet.crop2(0, 9*2, 32, 9);
+		hp_bar[7] = healthbarSheet.crop2(32, 9*2, 32, 9);
+		hp_bar[8] = healthbarSheet.crop2(32*2, 9*2, 32, 9);
+		hp_bar[9] = healthbarSheet.crop2(0, 9*3, 32, 9);
 	}
 }
