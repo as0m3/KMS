@@ -10,6 +10,8 @@ public class Assets {
 	// Menu Buttons
 	public static BufferedImage[] btn_start;
 	public static BufferedImage[] btn_stop;
+	public static BufferedImage[] btn_mute;
+	public static BufferedImage[] btn_mute2;
 	
 	//Menu Background
 	public static BufferedImage[] background;
@@ -36,6 +38,7 @@ public class Assets {
 		SpriteSheet tilesheet = new SpriteSheet(ImageLoader.loadImage("/textures/TileSheet.png"));
 		SpriteSheet startButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Start_Button.png"));
 		SpriteSheet stopButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Quit_Button.png"));
+		SpriteSheet muteButtonSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MuteButton.png"));
 		SpriteSheet backgroundSheet = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
 		SpriteSheet healthbarSheet = new SpriteSheet(ImageLoader.loadImage("/textures/HP_Bar.png"));
 		// ------> SpriteSheet entitysheet = new SpriteSheet(ImageLoader.loadImage("/textures/EntitySheet.png"));
@@ -46,12 +49,21 @@ public class Assets {
 		// Buttons
 		btn_start = new BufferedImage[2];
 		btn_stop = new BufferedImage[2];
+		btn_mute = new BufferedImage[2];
+		btn_mute2 = new BufferedImage[2];
 				
 		btn_start[0] = startButtonSheet.crop2(0, 0, 162, 64);
 		btn_start[1] = startButtonSheet.crop2(162, 0, 162, 64);
 		
 		btn_stop[0] = stopButtonSheet.crop2(0, 0, 64, 64);
 		btn_stop[1] = stopButtonSheet.crop2(64, 0, 64, 64);
+		
+		btn_mute[0] = muteButtonSheet.crop2(0, 0, 64, 64);
+		btn_mute[1] = muteButtonSheet.crop2(64, 0, 64, 64);
+		
+		btn_mute2[0] = muteButtonSheet.crop2(64 * 2, 0, 64, 64);
+		btn_mute2[1] = muteButtonSheet.crop2(64 * 3, 0, 64, 64);
+		
 		
 		//Background
 		background = new BufferedImage[7];
