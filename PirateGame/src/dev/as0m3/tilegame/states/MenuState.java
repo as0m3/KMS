@@ -43,8 +43,8 @@ public class MenuState extends State {
 				System.exit(1);
 			}
 		}));
-		// Mute
-		uiManager.addObject(new UIImageButton((1080-64)-74, (810-64)-74, 128, 128, Assets.btn_start, new ClickListener() {
+		// Mute 
+		uiManager.addObject(new UIImageButton((1080-64)-74, (810-64)-74, 128, 128, Assets.btn_mute, Assets.btn_mute2, new ClickListener() {
 			
 			@Override
 			public void onClick() {
