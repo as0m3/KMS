@@ -10,6 +10,7 @@ public abstract class UIObject {
 	protected int width, height;
 	protected Rectangle bounds;
 	protected boolean hovering = false;
+	protected boolean render = true;
 	
 	public UIObject(float x, float y, int width, int height) {
 		this.x = x;
