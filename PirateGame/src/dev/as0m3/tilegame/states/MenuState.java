@@ -35,7 +35,7 @@ public class MenuState extends State {
 				
 			}
 		}));
-		// Quit                                                     (Change this)
+		// Quit
 		uiManager.addObject(new UIImageButton(10, (810-64)-74, 128, 128, Assets.btn_stop, new ClickListener() {
 			
 			@Override

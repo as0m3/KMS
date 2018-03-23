@@ -21,9 +21,15 @@ public class UIManager {
 			o.tick();
 	}
 	
-	public void render(Graphics g) {
-		for(UIObject o : objects) 
-			o.render(g);
+	public void render(Graphics g) {	
+		for(UIObject o : objects) {
+			if(o.render == true) {
+				o.render(g);
+			} else {
+				continue;
+			}
+			
+		}
 	}
 	
 	public void onMouseMove(MouseEvent e) {
